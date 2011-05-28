@@ -54,7 +54,7 @@ OUTPUTFILE=$(echo $INPUTFILE | sed -re 's/\.mk?d$//' -e 's/$/&.pdf/')
 EOF
     if [ -f "${CSS}" ]; then
         cat <<EOF
-        <link rel=stylesheet type="text/css" href="${CSS}">
+        <link rel=stylesheet type="text/css" href="`readlink -f ${CSS}`">
 EOF
     fi
 
